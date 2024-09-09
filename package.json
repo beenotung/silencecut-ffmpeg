@@ -1,26 +1,46 @@
 {
   "name": "silentremove-ffmpeg",
   "version": "0.0.0",
+  "keywords": [
+    "ffmpeg",
+    "silence-detect",
+    "silence-remove",
+    "audio-processing",
+    "video-processing",
+    "cli",
+    "media-editing",
+    "ffmpeg-filter",
+    "typescript"
+  ],
+  "author": {
+    "name": "Beeno Tung",
+    "email": "aabbcc1241@yahoo.com.hk",
+    "url": "https://beeno-tung.surge.sh"
+  },
+  "license": "BSD-2-Clause",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "silentremove-ffmpeg": "bin.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "tsc --noEmit",
     "clean": "rimraf dist",
     "build": "rimraf dist && tsc -p . && rimraf dist/tsconfig.tsbuildinfo",
     "tsc": "tsc -p ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "dependencies": {
+    "@beenotung/tslib": "^23.11.1",
+    "ffmpeg-progress": "^1.0.1"
+  },
   "devDependencies": {
     "@types/node": "^22.5.4",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.4"
-  },
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ]
+  }
 }
