@@ -12,6 +12,7 @@ export type Section = {
   end: number
 }
 
+/** @description chain silentDetect() and silentRemove() */
 export async function silentDetectAndRemove(options: {
   inFile: string
   outFile: string

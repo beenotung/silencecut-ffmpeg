@@ -29,7 +29,55 @@ import {} from 'silentremove-ffmpeg'
 ## Typescript Signature
 
 ```typescript
+import { ProgressArgs } from 'ffmpeg-progress'
 
+export type Section = {
+  /** @description in seconds */
+  start: number
+  /** @description in seconds */
+  end: number
+}
+
+/** @description chain silentDetect() and silentRemove() */
+export function silentDetectAndRemove(options: {
+  inFile: string
+  outFile: string
+  /** @description -50 dB */
+  noiseLevelThreshold?: number
+  /** @description default 1 second */
+  durationThreshold?: number
+  onSilentDetectDuration?: ProgressArgs['onDuration']
+  onSilentDetectProgress?: ProgressArgs['onProgress']
+  onSilentRemoveDuration?: ProgressArgs['onDuration']
+  onSilentRemoveProgress?: ProgressArgs['onProgress']
+}): Promise<{
+  nonSilentSections: Section[]
+  silentSections: Section[]
+}>
+
+export function silentDetect(
+  options: {
+    file: string
+    /** @description -50 dB */
+    noiseLevelThreshold?: number
+    /** @description default 1000 ms */
+    durationThreshold?: number
+    onSilentSection?: (section: Section) => void
+    onNonSilentSection?: (section: Section) => void
+  } & ProgressArgs,
+): Promise<{
+  silentSections: Section[]
+  nonSilentSections: Section[]
+}>
+
+export function silentRemove(
+  options: {
+    inFile: string
+    outFile: string
+    /** @description nonSilentSections returned by silentDetect() or determined by custom logics */
+    sections: Section[]
+  } & ProgressArgs,
+): Promise<void>
 ```
 
 ## License
