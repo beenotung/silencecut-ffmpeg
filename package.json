@@ -1,6 +1,7 @@
 {
-  "name": "silentremove-ffmpeg",
+  "name": "silencecut-ffmpeg",
   "version": "1.0.1",
+  "description": "Auto cut out silent sections from video using ffmpeg filter silencedetect and silenceremove.",
   "keywords": [
     "ffmpeg",
     "silence-detect",
@@ -12,24 +13,20 @@
     "ffmpeg-filter",
     "typescript"
   ],
-  "author": {
-    "name": "Beeno Tung",
-    "email": "aabbcc1241@yahoo.com.hk",
-    "url": "https://beeno-tung.surge.sh"
-  },
+  "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beenotung/silentremove-ffmpeg.git"
+    "url": "git+https://github.com/beenotung/silencecut-ffmpeg.git"
   },
-  "homepage": "https://github.com/beenotung/silentremove-ffmpeg#readme",
+  "homepage": "https://github.com/beenotung/silencecut-ffmpeg#readme",
   "bugs": {
-    "url": "https://github.com/beenotung/silentremove-ffmpeg/issues"
+    "url": "https://github.com/beenotung/silencecut-ffmpeg/issues"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "silentremove-ffmpeg": "bin.js"
+    "silencecut-ffmpeg": "bin.js"
   },
   "files": [
     "dist"

@@ -1,6 +1,6 @@
-# silentremove-ffmpeg
+# silencecut-ffmpeg
 
-Detect and remove silent sections from video using ffmpeg.
+Auto cut out silent sections from video using ffmpeg filter silencedetect and silenceremove.
 
 [![npm Package Version](https://img.shields.io/npm/v/silentremove-ffmpeg)](https://www.npmjs.com/package/silentremove-ffmpeg)
 
