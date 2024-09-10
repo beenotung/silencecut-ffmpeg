@@ -3,9 +3,6 @@
 Detect and remove silent sections from video using ffmpeg.
 
 [![npm Package Version](https://img.shields.io/npm/v/silentremove-ffmpeg)](https://www.npmjs.com/package/silentremove-ffmpeg)
-[![Minified Package Size](https://img.shields.io/bundlephobia/min/silentremove-ffmpeg)](https://bundlephobia.com/package/silentremove-ffmpeg)
-[![Minified and Gzipped Package Size](https://img.shields.io/bundlephobia/minzip/silentremove-ffmpeg)](https://bundlephobia.com/package/silentremove-ffmpeg)
-[![npm Package Downloads](https://img.shields.io/npm/dm/silentremove-ffmpeg)](https://www.npmtrends.com/silentremove-ffmpeg)
 
 ## Features
 
