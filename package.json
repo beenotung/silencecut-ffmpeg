@@ -1,6 +1,6 @@
 {
   "name": "silencecut-ffmpeg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Auto cut out silent sections from video using ffmpeg filter silencedetect and silenceremove.",
   "keywords": [
     "ffmpeg",
