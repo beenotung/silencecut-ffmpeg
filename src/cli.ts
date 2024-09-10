@@ -12,7 +12,7 @@ let noiseLevelThreshold = -50 // Default -50 dB
 function printHelp() {
   console.log(
     `
-Usage: silentremove-ffmpeg [options] <output file>
+Usage: silencecut-ffmpeg [options] <output file>
 
 Options:
   -i, --input <file>               Input file path (required)
@@ -23,20 +23,20 @@ Options:
 
 Examples:
   # Using default duration (1 second) and noise level (-50 dB) thresholds
-  silentremove-ffmpeg -i in.mp4 out.mp4
+  silencecut-ffmpeg -i in.mp4 out.mp4
 
   # Custom thresholds: 1.5 seconds of silence and -40 dB noise level
-  silentremove-ffmpeg --input in.mp4 --duration-threshold 1.5 --noise-level-threshold -40 out.mp4
+  silencecut-ffmpeg --input in.mp4 --duration-threshold 1.5 --noise-level-threshold -40 out.mp4
 
   # Fast-paced cutting: detect silence shorter than 0.2 seconds and noise below -40 dB
-  silentremove-ffmpeg out.mp4 -i in.mp4 -n -40 -d 0.2
+  silencecut-ffmpeg out.mp4 -i in.mp4 -n -40 -d 0.2
 `.trim(),
   )
 }
 
 function failure(): never {
   console.error(
-    `Hint: run "silentremove-ffmpeg --help" to see available options and examples.`,
+    `Hint: run "silencecut-ffmpeg --help" to see available options and examples.`,
   )
   process.exit(1)
 }
@@ -73,7 +73,7 @@ for (let i = 2; i < process.argv.length; i++) {
 
     case '-v':
     case '--version':
-      console.log(`silentremove-ffmpeg v${version}`)
+      console.log(`silencecut-ffmpeg v${version}`)
       process.exit(0)
 
     case '-h':
