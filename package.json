@@ -38,7 +38,8 @@
     "test": "tsc --noEmit",
     "clean": "rimraf dist",
     "build": "rimraf dist && tsc -p . && rimraf dist/tsconfig.tsbuildinfo",
-    "tsc": "tsc -p ."
+    "tsc": "tsc -p .",
+    "build-binary": "bun build-binary.js"
   },
   "dependencies": {
     "@beenotung/tslib": "^23.11.1",
@@ -49,6 +50,7 @@
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "zip-a-folder": "^3.1.7"
   }
 }
