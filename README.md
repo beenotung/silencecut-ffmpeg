@@ -12,18 +12,98 @@ Detect and remove silent sections from video using ffmpeg.
 - Typescript support
 - Isomorphic package: works in Node.js and browsers
 
-## Installation
+## Installation (Optional)
+
+This package can be invoked with npx without explicit installation.
+
+### Option 1: Using `npx` without installation
+
+You can run the tool directly from the npm registry without having to install it globally or locally:
 
 ```bash
-npm install silentremove-ffmpeg
+npx -y silentremove-ffmpeg [options]
 ```
+
+The `-y` flag skip confirmation to download the package if it is not already cached.
+
+This is convenient for one-off usage as it doesn’t require you to install or manage the tool. However, npx will check for updates each time it is invoked, which can add some overhead.
+
+### Option 2: Install as a version-controlled dependency
+
+To avoid the overhead of npx checking for updates on every run, you can install `silentremove-ffmpeg` as a project dependency. This also ensures that the version you install is locked and won’t apply breaking changes unless you explicitly update it.
+
+Installing the package as a dependency also allows you to use the API programmatically from your Node.js or TypeScript code, enabling more advanced usage like integrating the tool into larger workflows.
+
+Steps:
+
+1. **Install the package** as a project dependency (this will add it to your `package.json`):
+
+   ```bash
+   npm install silentremove-ffmpeg
+   ```
+
+2. **Invoke the installed version** using `npx`:
+
+   ```bash
+   npx silentremove-ffmpeg [options]
+   ```
 
 You can also install `silentremove-ffmpeg` with [pnpm](https://pnpm.io/), [yarn](https://yarnpkg.com/), or [slnpm](https://github.com/beenotung/slnpm)
 
 ## Usage Example
 
+You can use `silentremove-ffmpeg` from cli or from nodejs.
+
+### Cli Usage
+
+```bash
+silentremove-ffmpeg [options] <output file>
+```
+
+#### Cli Options
+
+- `-i, --input <file>`: Input file path (required)
+- `-d, --duration-threshold <sec>`: Duration threshold in seconds (default: 1)
+- `-n, --noise-level-threshold <dB>`: Noise level threshold in dB (default: -50)
+- `-v, --version`: Show the version number
+- `-h, --help`: Show this help message
+
+#### Cli Usage Examples
+
+1. **Using default duration (1 second) and noise level (-50 dB) thresholds**:
+
+   ```bash
+   silentremove-ffmpeg -i in.mp4 out.mp4
+   ```
+
+2. **Custom thresholds: 1.5 seconds of silence and -40 dB noise level**:
+
+   ```bash
+   silentremove-ffmpeg --input in.mp4 --duration-threshold 1.5 --noise-level-threshold -40 out.mp4
+   ```
+
+3. **Fast-paced cutting: detect silence shorter than 0.2 seconds and noise below -40 dB**:
+   ```bash
+   silentremove-ffmpeg out.mp4 -i in.mp4 -n -40 -d 0.2
+   ```
+
+### API Usage
+
 ```typescript
-import {} from 'silentremove-ffmpeg'
+import { silentDetectAndRemove } from 'silentremove-ffmpeg'
+
+silentDetectAndRemove({
+  inFile: 'in.mp4',
+  outFile: 'out.mp4',
+  durationThreshold: 1.5, // seconds
+  noiseLevelThreshold: -40, // dB
+})
+  .then(() => {
+    console.log('Silent sections removed.')
+  })
+  .catch(err => {
+    console.error(err)
+  })
 ```
 
 ## Typescript Signature
