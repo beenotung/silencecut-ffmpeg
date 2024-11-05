@@ -13,6 +13,14 @@ Auto cut out silent sections from video using ffmpeg filter silencedetect and si
 
 This package can be invoked with npx without explicit installation.
 
+### Option 0: Download the standalone executable
+
+This option is available for Windows, MacOS and Linux users _without nodejs runtime_.
+
+The executable is available in the [release page](https://github.com/beenotung/silencecut-ffmpeg/releases).
+
+After downloading the executable, you can use it as a command line tool. You may add the directory of the executable to your `PATH` environment variable for convenience.
+
 ### Option 1: Using `npx` without installation
 
 You can run the tool directly from the npm registry without having to install it globally or locally:
