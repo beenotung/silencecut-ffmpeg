@@ -16,6 +16,11 @@ function build_for_platform {
 	target="bun-$platform-x64-baseline"
 	outfile="build/$name-$version-$platform"
 	bun build dist/cli.js --compile --target="$target" --outfile "$outfile"
+	if [ -f "$outfile.exe" ]; then
+		zip -r "$outfile.zip" "$outfile.exe"
+	else
+		zip -r "$outfile.zip" "$outfile"
+	fi
 }
 
 build_for_platform "linux"
