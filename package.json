@@ -34,7 +34,7 @@
   "scripts": {
     "test": "tsc --noEmit",
     "clean": "rimraf dist",
-    "build": "rimraf dist && tsc -p . && rimraf dist/tsconfig.tsbuildinfo",
+    "build": "rimraf dist && tsc -p . && rimraf dist/tsconfig.tsbuildinfo dist/cli.d.ts",
     "tsc": "tsc -p ."
   },
   "dependencies": {
