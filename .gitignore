@@ -10,3 +10,4 @@ dist/
 .DS_Store
 in.mp4
 out.mp4
+build/
